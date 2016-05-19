@@ -53,9 +53,9 @@ systemctl enable vsftpd
 # Prepare the PXE Boot
 if [ ! -e /home/vagrant/sync/CentOS-7-x86_64-Minimal-1511.iso ]
 then
-  wget http://mirror.uv.es/mirror/CentOS/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso /tmp
+  wget --quiet http://mirror.uv.es/mirror/CentOS/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso -P /tmp
 fi
-mount /home/vagrant/sync/CentOS-7-x86_64-Minimal-1511.iso /mnt
+mount /tmp/CentOS-7-x86_64-Minimal-1511.iso /mnt
 rsync -a /mnt/ /var/ftp/pub
 umount /mnt
 mkdir -p /var/lib/tftpboot/pxelinux.cfg
@@ -84,7 +84,7 @@ install
 # Keyboard layouts
 keyboard 'us'
 # Root password
-rootpw --iscrypted $1$oLsVVvKT$SiaHSeLv/EbYDzD8I1KLR.
+rootpw --plaintext toor
 # System timezone
 timezone Europe/Madrid --isUtc
 # Use network installation
