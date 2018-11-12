@@ -51,11 +51,11 @@ systemctl start vsftpd
 systemctl enable vsftpd
 
 # Prepare the PXE Boot
-if [ ! -e /home/vagrant/sync/CentOS-7-x86_64-Minimal-1511.iso ]
+if [ ! -e /home/vagrant/sync/CentOS-7-x86_64-Minimal-1804.iso ]
 then
-  wget --quiet http://mirror.uv.es/mirror/CentOS/7/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso -P /tmp
+  wget --quiet http://mirror.host.ag/centos/7.5.1804/isos/x86_64/CentOS-7-x86_64-Minimal-1804.iso -P /tmp
 fi
-mount /tmp/CentOS-7-x86_64-Minimal-1511.iso /mnt
+mount /tmp/CentOS-7-x86_64-Minimal-1804.iso /mnt
 rsync -a /mnt/ /var/ftp/pub
 umount /mnt
 mkdir -p /var/lib/tftpboot/pxelinux.cfg
