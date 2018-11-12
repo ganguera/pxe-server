@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Install needed packages
-yum install -y dhcp tftp tftp-server syslinux wget vsftpd
+yum install -y dhcp tftp tftp-server syslinux wget vsftpd rsync ssh
 
 # Configure eth1
 cat << EOF > /etc/sysconfig/network-scripts/ifcfg-eth1
