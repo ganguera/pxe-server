@@ -1,5 +1,5 @@
 # PXE Server
-Provision a CentOS 7 PXE Server using Vagrant and run a VirtualBox client
+Provision a CentOS 7.5 PXE Server using Vagrant and run a VirtualBox client
 that automatically will boot and configure itself.
 
 ## Requirements
